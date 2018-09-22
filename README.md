@@ -1,4 +1,7 @@
-# Homework 3
+# Homework 3 (20 Points)
+
+The deadline for Homework 3 is Saturday, September 29, 6pm. The late
+submission deadline is Thursday, October 4, 6pm.
 
 ## Getting the code template
 
@@ -96,18 +99,19 @@ https://github.com/nyu-pl-fa18/hw03-<YOUR-GITHUB-USERNAME>/
 ```
 and double-check that your solution has been uploaded correctly.
 
-You can resubmit your solution anytime by reexecuting the above git
-commands. Though, please remember the rules for submitting solutions
-after the homework deadline has passed.
+You can resubmit an updated solution anytime by reexecuting the above
+git commands. Though, please remember the rules for submitting
+solutions after the homework deadline has passed.
 
 
 ## Problem 1: Short-circuit Evaluation (4 Points)
 
 Neither Algol 60 nor Algol 68 employs short-circuit evaluation for
 Boolean expressions. However, both languages support a form of
-conditional expressions. Show how to use conditional expressions in
-Scala to achieve the effect of short-circuit evaluation. That is give
-Scala expressions that behave exactly like the Scala expressions
+conditional expressions similar to Scala. Show how to use conditional
+expressions in Scala to achieve the effect of short-circuit
+evaluation. That is, give Scala expressions that behave exactly like
+the Scala expressions
 
 ```scala
 e1 && e2 // logical and
@@ -153,17 +157,13 @@ Newton's method specifies a sequence of approximations <img alt="x_0, x_1, \dots
 
 <img alt="x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}" src="http://latex.codecogs.com/gif.latex?x_%7Bn&amp;plus;1%7D%20%3D%20x_n%20-%20%5Cfrac%7Bf%28x_n%29%7D%7Bf%27%28x_n%29%7D">
 
-The cubic root of a real number <img alt="c"
-src="http://latex.codecogs.com/gif.latex?c"> for <img alt="c > 0"
-src="http://latex.codecogs.com/gif.latex?c%20%3E%200">, written <img
-alt="\sqrt[3]{c}"
-src="http://latex.codecogs.com/gif.latex?%5Csqrt%5B3%5D%7Bc%7D">, is a positive <img alt="x" src="http://latex.codecogs.com/gif.latex?x"> such that <img alt="x^3 = c" src="http://latex.codecogs.com/gif.latex?x%5E3%20%3D%20c">.
+The cubic root of a real number <img alt="c" src="http://latex.codecogs.com/gif.latex?c"> for <img alt="c > 0" src="http://latex.codecogs.com/gif.latex?c%20%3E%200">, written <img alt="\sqrt[3]{c}" src="http://latex.codecogs.com/gif.latex?%5Csqrt%5B3%5D%7Bc%7D">, is a positive <img alt="x" src="http://latex.codecogs.com/gif.latex?x"> such that <img alt="x^3 = c" src="http://latex.codecogs.com/gif.latex?x%5E3%20%3D%20c">.
 Thus, to compute the cubic root of a number <img alt="c" src="http://latex.codecogs.com/gif.latex?c">, we want to find the
 positive root of the function: 
 
 <img alt="f(x) = x^3 - c" src="http://latex.codecogs.com/gif.latex?f%28x%29%20%3D%20x%5E3%20-%20c">
 
-Thus, the following recursive equation defines a sequence of
+It follows from Newton's method that the following recursive equation defines a sequence of
 approximations for the cubic root of <img alt="c" src="http://latex.codecogs.com/gif.latex?c">
 
 <img alt="x_{n+1} = \frac{c / x_n^2 + 2 x_n}{3}"
@@ -175,13 +175,12 @@ Implement a function `cubicRoot`
 def cubicRoot(c: Double, epsilon: Double): Double 
 ``` 
 that computes
-the approximations <img alt="x_n" src="http://latex.codecogs.com/gif.latex?x_n"> until the approximation error is below <img alt="\epsilon"
-  src="http://latex.codecogs.com/gif.latex?%5Cepsilon"> (epsilon), that is,
+the approximations <img alt="x_n" src="http://latex.codecogs.com/gif.latex?x_n"> of the cubic root of <img alt="c" src="http://latex.codecogs.com/gif.latex?c"> until the approximation error is below <img alt="\epsilon" src="http://latex.codecogs.com/gif.latex?%5Cepsilon"> (epsilon), that is
      
    <img alt="|x_n^3 - c| < \epsilon"
    src="http://latex.codecogs.com/gif.latex?%7Cx_n%5E3%20-%20c%7C%20%3C%20%5Cepsilon">
    
-You can use the function `math.abs` from the Scala standard library to
+holds. You can use the function `math.abs` from the Scala standard library to
 compute the absolute value of a `Double` value. Use a while loop to
 compute the approximations one step at a time.
 

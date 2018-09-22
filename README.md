@@ -157,7 +157,7 @@ Newton's method specifies a sequence of approximations <img alt="x_0, x_1, \dots
 
 <img alt="x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}" src="http://latex.codecogs.com/gif.latex?x_%7Bn&amp;plus;1%7D%20%3D%20x_n%20-%20%5Cfrac%7Bf%28x_n%29%7D%7Bf%27%28x_n%29%7D">
 
-The cubic root of a real number <img alt="c" src="http://latex.codecogs.com/gif.latex?c"> for <img alt="c > 0" src="http://latex.codecogs.com/gif.latex?c%20%3E%200">, written <img alt="\sqrt[3]{c}" src="http://latex.codecogs.com/gif.latex?%5Csqrt%5B3%5D%7Bc%7D">, is a positive <img alt="x" src="http://latex.codecogs.com/gif.latex?x"> such that <img alt="x^3 = c" src="http://latex.codecogs.com/gif.latex?x%5E3%20%3D%20c">.
+The cubic root of a real number <img alt="c" src="http://latex.codecogs.com/gif.latex?c"> for <img alt="c &gt; 0" src="http://latex.codecogs.com/gif.latex?c%20%3E%200">, written <img alt="\sqrt[3]{c}" src="http://latex.codecogs.com/gif.latex?%5Csqrt%5B3%5D%7Bc%7D">, is a positive <img alt="x" src="http://latex.codecogs.com/gif.latex?x"> such that <img alt="x^3 = c" src="http://latex.codecogs.com/gif.latex?x%5E3%20%3D%20c">.
 Thus, to compute the cubic root of a number <img alt="c" src="http://latex.codecogs.com/gif.latex?c">, we want to find the
 positive root of the function: 
 
@@ -188,22 +188,22 @@ compute the approximations one step at a time.
 
 The Scala type `Array[Int]` represents arrays that store integer
 values. For instance, you can create an array that stores the integer
-values `1`, `2`, and `3`. By writing `Array(1,2,3)`. The elements of
+values `1`, `2`, and `3` by writing `Array(1,2,3)`. The elements of
 an array `a` are indexed from `0` to `a.length-1` where `a.length` is
 the length of `a`. To retrieve the value of `a` at index `i`, you
 write `a(i)`. For example, if `a` is `Array(1,2,3)` then `a.length` is
 `3`, `a(0)` is `1`, and `a(2)` is `3`. Scala arrays are
-*bounds-checked*, i.e., when you try to access an index that is
-outside `[0,a.length)`, then an exception will be thrown.
+*bounds-checked*, i.e., when you try to access an index `i` that is
+outside of the interval `[0,a.length)`, then an exception will be thrown.
 
 The goal of this exercise is to implement a function 
 
 ```scala
-  def binarySearch(x: Int, a: Array[Int]): Int = {
+  def binarySearch(x: Int, a: Array[Int]): Int
 ```
 
-that searches for an integer value `x` in an integer array `a` by
-using binary search. Binary search solves the problem by keeping track
+that searches for an integer value `x` in an integer array `a`
+using binary search. Binary search solves this problem by keeping track
 of a range within the array in which `x` must be if it is anywhere in
 the array. Initially, the range is the entire array.  The range is
 shrunk by comparing its middle element to `x` and discarding half the
@@ -223,11 +223,11 @@ that uses a while loop to check whether `a` is strictly sorted in
 increasing order. We will use this function to ensure that
 `binarySearch` is only called on arrays that are properly sorted.
 
-Now implement `binarySearch`. The function should return an integer
+Now implement `binarySearch` itself. The function should return an integer
 `i` such that:
 
 * `i` is the smallest index `i` such that `a(i)` is greater or equal
-  to `x` if such an index exists.
+  to `x` if such an index exists within the bounds of `a`.
   
 * otherwise (i.e. if all elements of `a` are smaller than `x`), `i`
   should be equal to `a.length`.
@@ -250,10 +250,10 @@ properties of your implementation that are maintained in each
 iteration of the while loop:
 
 * What properties do the variables storing the two bounds of the
-  current search interval satisfy?
+  remaining search interval satisfy?
 
 * How does the value of `x` relate to the values stored in the array
-  (inside and outside of the interval)?
+  (inside and outside of the search interval)?
 
 * ...
 
@@ -261,10 +261,10 @@ Carefully think about all corner cases. Run your code only after you
 convinced yourself that your solution is correct.  Are you one of
 Bentley's glorious 10%? If not, don't worry. If one of the unit tests
 that I have provided or one of your own tests fails, think about how
-it relates to the invariants you came up with. Did you forget an
-important property in your invariant? E.g. did you miss a corner case?
-Is one of your properties not a correct loop invariant? Use this
-analysis to debug your code (and your invariants).
+that test input relates to the invariants you came up with. Did you
+forget an important property in your invariant? E.g. did you miss a
+corner case?  Is one of your properties not a correct loop invariant?
+Use this analysis to debug your code (and your invariant).
 
 Hint: you can write *assertions* in your code that test whether your
 properties are loop invariants. For instance, if you store the left

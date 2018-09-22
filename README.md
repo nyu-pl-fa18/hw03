@@ -249,11 +249,11 @@ after the loop exits. Think of an invariant that captures the key
 properties of your implementation that are maintained in each
 iteration of the while loop:
 
-* What properties do the variables storing the two bounds of the
-  remaining search interval satisfy?
+* What properties do the variables satisfy that store the two indices
+  bounding the remaining range?
 
 * How does the value of `x` relate to the values stored in the array
-  (inside and outside of the search interval)?
+  (inside and outside of the remaining range)?
 
 * ...
 
@@ -268,9 +268,9 @@ Use this analysis to debug your code (and your invariant).
 
 Hint: you can write *assertions* in your code that test whether your
 properties are loop invariants. For instance, if you store the left
-bound of the search interval in a variable `l`, one of your invariants
-could say that `l` should always be positive. You can check this by
-adding the statement
+bound of the range in the variable `l`, one of your invariants could
+say that `l` should always be positive. You can check this by adding
+the statement
 
 `assert(0 <= l)`
 

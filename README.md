@@ -272,7 +272,9 @@ bound of the range in the variable `l`, one of your invariants could
 say that `l` should always be positive. You can check this by adding
 the statement
 
-`assert(0 <= l)`
+```scala
+assert(0 <= l)
+```
 
 at the beginning of the body of your while loop. If the property is
 violated in any loop iteration when you run your tests, an exception

@@ -37,11 +37,14 @@ class hw03Spec extends FlatSpec {
   
   "cubicRoot" should "compute the cubic root of 'c' up to error 'epsilon'" in {
       val epsilon = 0.0001
-      assert(cubicRoot(0, epsilon) === 0)
-      assert(cubicRoot(8, epsilon) === 2.0 +- epsilon)
-      assert(cubicRoot(27, epsilon) === 3.0 +- epsilon)
-      assert(cubicRoot(64, epsilon) === 4.0 +- epsilon)
-   }
+      
+      val cs = List(0.0, 8.0, 27.0, 64.0)
+    
+      for (c <- cs) {
+        val croot = cubicRoot(c, epsilon)
+        assert (math.abs(croot * croot * croot - c) < epsilon)
+      }
+  }
    
    // Tests for Problem 3
    

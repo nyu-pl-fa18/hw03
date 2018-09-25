@@ -25,19 +25,19 @@ provided in the announcement of this homework assignment on
 Piazza. After clicking on the link, you will receive an email from
 GitHub, when your copy of the repository is ready. It will be
 available at
-`https://github.com/nyu-pl-fa18/hw03-<YOUR-GITHUB-USERNAME>`.  
+`https://github.com/nyu-pl-fa18/hw3-<YOUR-GITHUB-USERNAME>`.  
 Note that this may take a few minutes.
 
-* Open a browser at `https://github.com/nyu-pl-fa18/hw03-<YOUR-GITHUB-USERNAME>` with your Github username inserted at the appropriate place in the URL.
+* Open a browser at `https://github.com/nyu-pl-fa18/hw3-<YOUR-GITHUB-USERNAME>` with your Github username inserted at the appropriate place in the URL.
 * Choose a place on your computer for your homework assignments to reside and open a terminal to that location.
 * Execute the following git command: <br/>
-  ```git clone https://github.com/nyu-pl-fa18/hw03-<YOUR-GITHUB-USERNAME>.git```<br/>
-  ```cd hw03```
+  ```git clone https://github.com/nyu-pl-fa18/hw3-<YOUR-GITHUB-USERNAME>.git```<br/>
+  ```cd hw3```
 
 The code template for solving the exercises is provided in the file
 
 ```
-src/main/scala/pl/hw03/hw03.scala
+src/main/scala/pl/hw3/hw03.scala
 ```
 
 relative to the root directory of the repository. Follow the
@@ -47,7 +47,7 @@ InteliJ (or use your other favorite IDE or editor to work on the assignment).
 The file
 
 ```
-src/test/scala/pl/hw03/hw03Spec.scala
+src/test/scala/pl/hw3/hw03Spec.scala
 ```
 
 contains unit tests that help you to ensure that the code that you
@@ -95,7 +95,7 @@ You can replace "solution" by a more meaningful commit message.
 
 Refresh your browser window pointing at
 ```
-https://github.com/nyu-pl-fa18/hw03-<YOUR-GITHUB-USERNAME>/
+https://github.com/nyu-pl-fa18/hw3-<YOUR-GITHUB-USERNAME>/
 ```
 and double-check that your solution has been uploaded correctly.
 
